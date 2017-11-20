@@ -9,7 +9,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#0068C4",
     "navigationBarTitleText": "知乎",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
