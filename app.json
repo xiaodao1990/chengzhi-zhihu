@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "知乎",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [{
+      "text": "",
+      "iconPath": "images/index.png",
+      "selectedIconPath": "images/index_focus.png"
+    }, {
+      "text": "",
+      "iconPath": "images/discovery.png",
+      "selectedIconPath": "images/discovery_focus.png"
+    }, {
+      "text": "",
+      "iconPath": "images/ring.png",
+      "selectedIconPath": "images/ring_focus.png"
+    }, {
+      "text": "",
+      "iconPath": "images/chat.png",
+      "selectedIconPath": "images/chat_focus.png"
+    }, {
+      "text": "",
+      "iconPath": "images/burger.png",
+      "selectedIconPath": "images/burger_focus.png"
+    }]
+
+  }
+}
