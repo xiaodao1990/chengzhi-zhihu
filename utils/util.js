@@ -14,6 +14,60 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
+
+var index = require('../data/data_index.js')
+var index_next = require('../data/data_index_next.js')
+var discovery = require('../data/data_discovery.js')
+var discovery_next = require('../data/data_discovery_next')
+
+function getData(url) {
+  return new Promise(function (resolve, reject) {
+    wx.request({
+        url:url,
+        data: {},
+        header: {
+
+        },
+        cussess: function(res) {
+            console.log("cussess")
+            resolve(res)
+        },
+        fail: function(res) {
+            reject(res)
+            console.log("failed")
+        }
+    })
+  })
 }
+
+
+function getData2() {
+    return index.index;
+}
+
+function getNext() {
+    return index_next.next;
+}
+
+function getDiscovery() {
+    return discovery.discovery;
+}
+
+function discoveryNext() {
+    return discovery_next.next;
+}
+
+module.exports = {
+    formatTime: formatTime,
+    getData: getData,
+    getData2: getData2,
+    getNext: getNext,
+    getDiscovery: getDiscovery,
+    discoveryNext: discoveryNext
+}
+//这两种方式有什么区别
+//module.exports.getData = getData;
+//module.exports.getData2 = getData2;
+//module.exports.getNext = getNext;
+//module.exports.getDiscovery = getDiscovery;
+//module.exports.discoveryNext = discoveryNext;
