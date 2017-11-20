@@ -1,3 +1,8 @@
 <!--index.wxml-->
-<scroll-view>
+<scroll-view scroll-y="{{true}}" class="container" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="10" lower-threshold="5" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <!--头部search-->
+  <view class="search flex-wrp">
+
+  </view>
+  <!--下面item-->
 </scroll-view>
