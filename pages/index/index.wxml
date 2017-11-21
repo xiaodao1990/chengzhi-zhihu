@@ -2,7 +2,51 @@
 <scroll-view scroll-y="{{true}}" class="container" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="10" lower-threshold="5" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <!--头部search-->
   <view class="search flex-wrp">
-
+      <view class="search-left flex-item">
+        <image src="../../images/search.png"></image>
+        <input type="text" placeholder="搜索话题, 问题或人" placeholder-class="search-placeholder" />
+      </view>
+      <view class="search-right flex-item" bindtap="upper">
+        <image src="../../images/lighting.png"></image>
+      </view>
   </view>
   <!--下面item-->
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <!--填充item-->
+        <view class="feed-item">
+            <!--feed_source-->
+            <view class="feed-source">
+                <a>
+                    <image src="{{item.feed_source_img}}"></image>
+                    <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <!--feed_content-->
+            <view class="feed-content">
+                <!--问题内容-->
+                <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
+                    <a class="question-link">
+                        <text>{{item.question}}</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindItemTap">
+                        <text class="answer-txt" aid="{{answer-id}}">{{item.answer_ctnt}}</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>{{item.good_num}} 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>{{item.comment_num}} 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
 </scroll-view>

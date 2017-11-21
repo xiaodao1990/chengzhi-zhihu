@@ -9,3 +9,107 @@
   box-sizing: border-box;
   background: #F0F4F3;
 } 
+
+.flex-wrp {
+  display: flex;
+}
+
+.flex-item {
+  text-align: center;
+}
+
+.container .feed-item {
+  background-color: #ffffff;
+  width: 690rpx;
+  padding: 30rpx 30rpx 20rpx;
+  margin: 7rpx 0 6rpx 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
+
+.container .feed-item .feed-source {
+  width: 690rpx;
+  height: 50rpx;
+  /*background-color: #fff;*/
+  /*让行内元素垂直居中*/
+  line-height: 50rpx;
+}
+
+.container .feed-item .feed-source a {
+  display: inline-block;
+  /*background-color: #ff27fc;*/
+  height: 45rpx;
+  /*让行内元素垂直居中*/
+  line-height: 45rpx;
+
+}
+
+.container .feed-item .feed-source image {
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 45rpx;
+  /*在父元素中垂直居中*/
+  vertical-align: middle;
+}
+
+.container .feed-item .feed-source text {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  /*在父元素中垂直居中*/
+  vertical-align: middle;
+  /*background-color: #9effb0;*/
+  margin: 0 0 0 15rpx;
+  color: #a0acac;
+  font-size: 26rpx;
+}
+
+.container .feed-item .feed-source .item-more {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  /*background-color: #cbf4ff;*/
+}
+
+.container .feed-item .feed-content {
+  padding: 10rpx 0 0 0;
+  /*background-color: #cbf4ff;*/
+}
+
+.container .feed-item .feed-content .question text {
+  font-size: 28rpx;
+  /*定义字体粗细，100~900。400等同于normal，而700等同于bold*/
+  font-weight: 600px;
+  line-height: 40rpx;
+  text-space: 5rpx;
+}
+
+.container .feed-item .feed-content .answer-body {
+  padding: 10rpx 0 0 0;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #5b5b5b;
+}
+
+.container .feed-item .feed-content .answer-actions {
+  width: 690rpx;
+  padding: 10rpx 0 0 0;
+  color: #a0acac;
+}
+
+.container .feed-item .feed-content .answer-actions view {
+  /*让行内元素可以设置宽高*/
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+  font-size: 24rpx;
+}
+
+.container .feed-item .feed-content .answer-actions .dot ::after {
+  content: "•";
+}
+
+
