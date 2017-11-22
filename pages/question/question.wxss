@@ -1,1 +1,112 @@
 /* pages/question/question.wxss */
+.answer-feed {
+    padding: 0;
+    font-size: 14rpx;
+    background: #F0F4F3;
+    color: #000;
+}
+
+.question-wrp {
+    border-radius: 3px;
+    box-shadow: 0 1px 2px #bebebe;
+}
+
+.question-item {
+    width: 710rpx;
+    padding: 40rpx 20rpx 10rpx;
+    background-color: #fff;
+}
+
+.question-item .que-tag {
+
+}
+
+.question-item .que-tag .tag {
+    height: 28rpx;
+    padding: 15rpx 20rpx;
+    background-color: #EEF5F8;
+    border-radius: 28rpx;
+    margin: 0 10rpx;
+    vertical-align: middle;
+    font-size: 28rpx;
+    color: #2186E0;
+}
+
+.question-item .que-title {
+    padding: 40rpx 20rpx 30rpx;
+    font-size: 38rpx;
+    /*background-color: #fff6ce;*/
+}
+
+.question-item .que-content {
+    padding: 0 20rpx;
+    font-size: 26rpx;
+    /*background-color: #ffcfd3;*/
+}
+
+.question-item .que-follow {
+    margin: 20rpx;
+    height: 70rpx;
+    /*background-color: #86b9ff;*/
+}
+
+.question-item .que-follow view {
+    display: inline-block;
+    margin: 0 40rpx 0 0;
+    /*background-color: #bbffb0;*/
+}
+
+.question-item .que-follow image {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 10rpx 0 0;
+    vertical-align: middle;
+}
+
+.question-item .que-follow .left {
+    float: left;
+    padding: 10rpx 0;
+}
+
+.question-item .que-follow .left text {
+    /*background-color: #ff5158;*/
+    color: #AFAFAF;
+    height: 50rpx;
+    vertical-align: middle;
+    padding: 18rpx 0;
+    font-size: 24rpx;
+}
+
+.question-item .que-follow .right {
+    float: right;
+    padding: 20rpx 55rpx;
+    color: #ffffff;
+    background-color: #52C980;
+    border-radius: 3px;
+    font-size: 26rpx;
+}
+
+.que-operate {
+    width: 750rpx;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    color: #889091;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.que-operate image {
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: middle;
+    margin: 0 20rpx 0 0;
+}
+
+.que-operate .invite {
+    border-right: 2px solid #ebebeb;
+}
+
+.que-operate .flex-item {
+    padding: 20rpx 0;
+    font-size: 26rpx;
+}

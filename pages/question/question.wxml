@@ -2,6 +2,78 @@
 <!--<text>pages/question/question.wxml</text>-->
 <view class="container">
     <view class="question-wrp">
-
+        <view class="question-item">
+            <view class="que-tag">
+                <text class="tag">阅读</text>
+                <text class="tag">电子书</text>
+                <text class="tag">kindle</text>
+                <text class="tag">书籍</text>
+                <text class="tag">文学</text>
+            </view>
+            <view class="que-title">
+                选择 Kindle 而不是纸质书的原因是什么？
+            </view>
+            <view class="que-content">
+                WEB前端*不靠谱天气预报员*想做代码小仙女
+            </view>
+            <view class="que-follow">
+                <view class="left">
+                    <view class="watch">
+                        <image src="../../images/eye.png"></image>
+                        <text>3316</text>
+                    </view>
+                    <view class="comment">
+                        <image src="../../images/comment2.png"></image>
+                        <text>27</text>
+                    </view>
+                </view>
+                <view class="right">
+                    关注
+                </view>
+            </view>
+        </view>
+        <view class="que-operate flex-wrp">
+            <view class="invite flex-item">
+                <image src="../../images/invite.png"></image>
+                <text>邀请回答</text>
+            </view>
+            <view class="write flex-item">
+                <image src="../../images/write.png"></image>
+                <text>写回答</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-feed">
+        <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+            <!--填充item-->
+            <view class="feed-item">
+                <!--feed_source-->
+                <view class="feed-source">
+                    <a>
+                        <image src="{{item.feed_source_img}}"></image>
+                        <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+                    </a>
+                </view>
+                <!--feed_content-->
+                <view class="feed-content">
+                    <view class="answer-body">
+                        <view bindtap="bindItemTap">
+                            <text class="answer-txt" aid="{{answer-id}}">{{item.answer_ctnt}}</text>
+                        </view>
+                        <view class="answer-actions" bindtap="bindItemTap">
+                            <view class="like dot">
+                                <a>{{item.good_num}} 赞同 </a>
+                            </view>
+                            <view class="comments dot">
+                                <a>{{item.comment_num}} 评论 </a>
+                            </view>
+                            <view class="follow-it">
+                                <a>2个月前</a>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
     </view>
 </view>
