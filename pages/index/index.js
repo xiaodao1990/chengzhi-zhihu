@@ -6,13 +6,18 @@ var util = require('../../utils/util.js');
 Page({
     data: {
         feed: [],
-        feed_length: 0
+        feed_length: 0,
+        globalData: {
+            sysinfo: null,
+            px2rpx: 0,
+            rpx2px: 0
+        }
     },
     onLoad: function () {
         console.log("onLoad")
         var that = this
-
         this.getData();
+        this.getSystemInfo();
     },
     // 下拉刷新,怎么实现下拉刷新
     upper: function () {
@@ -84,5 +89,16 @@ Page({
         wx.navigateTo({
           url: '../answer/answer'
         });
+    },
+    // 屏幕适配
+    getSystemInfo: function() {
+        var systemInfo = wx.getSystemInfo();
+        console.log("systemInfo: "+systemInfo);
+        if (systemInfo) {
+            this.globalData.sysinfo = systemInfo;
+            var width = systemInfo.windowWidth;
+            this.globalData.px2rpx = 750 / width;
+            this.globalData.rpx2px = width / 750;
+        }
     }
 })
