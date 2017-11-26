@@ -1,2 +1,31 @@
 <!--pages/more/more.wxml-->
-<text>pages/more/more.wxml</text>
+<!--<text>pages/more/more.wxml</text>-->
+<view class="container more">
+
+    <!--登录信息-->
+    <view class="user flex-wrp">
+        <view class="avatar flex-item">
+            <image class="useinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+        </view>
+
+        <view class="user-info flex-item">
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <text class="edit">查看或编辑个人主页</text>
+        </view>
+    </view>
+
+    <view class="my">
+        <block wx:for="{{item}}" wx:for-index="idx" wx:for-item="itemName">
+            <view class="my-item flex-wrp">
+                <view class="myitem-icon flex-item">
+                    <image src="{{itemName.icon}}"></image>
+                </view>
+                <view class="myitem-name flex-item">
+                    <text>{{itemName.msg}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+
+
+</view>

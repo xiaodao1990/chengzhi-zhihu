@@ -1,66 +1,94 @@
 // pages/discovery/discovery.js
+
+var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    navTab: ["推荐", "圆桌", "热门", "收藏"],
+    currentNavtab: "0",
+    imgUrls: [
+        '../../images/24213.jpg',
+        '../../images/24280.jpg',
+        '../../images/1444983318907-_DSC1826.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    indicatorColor: '#8CCEFD',
+    indicatorActiveColor: '#298DE5',
+    feed: [],
+    feed_length: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  switchTab: function(event) {
+    console.log("switchTab");
+    this.setData({
+      currentNavtab: event.currentTarget.dataset.idx
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onLoad: function() {
+    console.log('onLoad');
+    var that = this;
+    //调用应用实例的方法获取全局数据
+    this.getData();
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  getData: function() {
+    var feed = util.getDiscovery();
+    console.log("loaddata");
+    var feed_data = feed.data;
+    this.setData({
+      feed: feed_data,
+      feed_length: feed_data.length
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  upper: function() {
+    wx.showNavigationBarLoading();
+    this.refresh();
+    console.log("upper");
+    setTimeout(function () {
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
+    }, 2000);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  lower: function() {
+    wx.showNavigationBarLoading();
+    var that = this;
+    that.nextload();
+    setTimeout(function () {
+      wx.hideNavigationBarLoading();
+    }, 2000);
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  refresh: function() {
+    console.log("refresh");
+    wx.showLoading({
+      title: '加载中',
+    });
+    var feed = util.getDiscovery();
+    var feed_data = feed.data;
+    this.setData({
+      feed: feed_data,
+      feed_length: feed_data.length
+    });
+    setTimeout(function () {
+      wx.hideLoading();
+    }, 2000);
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  nextload: function() {
+    console.log("nextLoad");
+    wx.showLoading({
+      title: '加载中',
+    });
+    var feed = util.discoveryNext();
+    var feed_data = feed.data;
+    this.setData({
+      feed: this.data.feed.concat(feed_data),
+      feed_length: this.data.feed_length + feed_data.length
+    });
+    setTimeout(function () {
+      wx.hideLoading();
+    }, 2000);
   }
 })

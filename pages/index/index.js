@@ -33,10 +33,10 @@ Page({
     lower: function () {
         wx.showNavigationBarLoading();
         var that = this;
+        that.nextLoad();
         setTimeout(function () {
             wx.hideNavigationBarLoading();
-            that.nextLoad();
-        }, 1000);
+        }, 2000);
     },
     // 使用本地假数据填充页面
     getData: function() {
@@ -60,7 +60,7 @@ Page({
             feed_length: feed_data.length
         });
         setTimeout(function () {
-            wx.hideLoading()
+            wx.hideLoading();
         }, 2000);
     },
     // 使用本地假数据进行分页加载的效果
@@ -77,7 +77,7 @@ Page({
         });
         setTimeout(function () {
             wx.hideLoading()
-        }, 1000);
+        }, 2000);
     },
     // 自定义的点击事件
     bindQueTap: function() {// 跳转到问题

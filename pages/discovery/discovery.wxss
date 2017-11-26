@@ -1,1 +1,15 @@
 /* pages/discovery/discovery.wxss */
+.container {
+    height: 1500rpx;
+}
+
+.activity {
+    width: 740rpx;
+    height: 375rpx;
+}
+
+.activity image {
+    width: 750rpx;
+    height: 375rpx;
+}
+
